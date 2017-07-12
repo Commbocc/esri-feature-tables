@@ -21,7 +21,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr is="esri-feature-table-row" v-for="item in sorted_features" :item="item" :fields="fields" :oid="oid" :url="url"></tr>
+						<tr is="esri-feature-table-row" v-for="item in sorted_features" :item="item" :fields="fields" :oid="oid" :url="url" :key="item"></tr>
 					</tbody>
 				</table>
 			</div>
