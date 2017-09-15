@@ -35,9 +35,13 @@ export default {
 			var field = _.findWhere(this.$parent.feature_fields, {name: attr})
 			switch (field.type) {
 				case 'date':
-					var options = { year: 'numeric', month: 'long', day: 'numeric' }
-					var date = new Date(this.item.attributes[attr])
-					return date.toLocaleString('en-us', options)
+					if (this.item.attributes[attr]) {
+						var options = { year: 'numeric', month: 'long', day: 'numeric' }
+						var date = new Date(this.item.attributes[attr])
+						return date.toLocaleString('en-us', options)
+					} else {
+						return null
+					}
 					break;
 				default:
 					return this.item.attributes[attr]
