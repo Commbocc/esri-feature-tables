@@ -90,9 +90,13 @@ export default {
 			var field = _.findWhere(this.feature_fields, {name: attr})
 			switch (field.type) {
 			case 'date':
-				var options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }
-				var date = new Date(this.feature.attributes[attr])
-				return date.toLocaleString('en-us', options)
+				if (this.feature.attributes[attr]) {
+					var options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }
+					var date = new Date(this.feature.attributes[attr])
+					return date.toLocaleString('en-us', options)
+				} else {
+					return null
+				}
 				break;
 			default:
 				return this.feature.attributes[attr]
