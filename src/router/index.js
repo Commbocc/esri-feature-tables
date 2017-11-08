@@ -56,7 +56,7 @@ export default new Router({
 			props: {
 				filterPlaceholder: 'Filter Resurfacings...',
 				fields: {'Road':'STREET', 'From':'FRSTNM', 'To':'TOSTNM'},
-				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/FY17PlannedResurfacing/MapServer/0',
+				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/RoadResurfacePlan/MapServer/0',
 			},
 			children: [
 				{
