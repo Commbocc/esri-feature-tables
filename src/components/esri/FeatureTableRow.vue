@@ -1,8 +1,8 @@
 <template>
 	<tr class="esri-feature-table-row">
 		<td width="1">
-			<router-link v-once :to="{ path: route_path }" class="btn btn-default btn-xs">
-				<i class="fa fa-fw fa-info-circle"></i>
+			<router-link v-once :to="{ path: route_path }" class="btn btn-default btn-xs" :aria-label="aria_label">
+				<i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
 			</router-link>
 		</td>
 		<td v-for="f in $parent.fields">
@@ -28,6 +28,12 @@ export default {
 		},
 		route_path () {
 			return this.$parent.pre_route_path+'/'+this.feature_id
+		},
+		first_key () {
+			return this.$parent.fields[Object.keys(this.$parent.fields)[0]]
+		},
+		aria_label () {
+			return `Additional information for ${this.formatted_attr(this.first_key)}`
 		}
 	},
 	methods: {

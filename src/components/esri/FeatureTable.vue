@@ -1,9 +1,9 @@
 <template>
-	<section class="esri-feature-table">
+	<div class="esri-feature-table">
 
 		<div class="panel panel-default">
 			<header v-if="filter" class="panel-heading">
-				<input v-on:keyup="get_features" v-model="filter_text" :placeholder="filterPlaceholder" class="form-control input-lg" />
+				<input v-on:keyup="get_features" v-model="filter_text" :placeholder="filterPlaceholder" class="form-control input-lg" :aria-label="filterPlaceholder" />
 			</header>
 
 			<div v-if="is_loading" class="panel-body">
@@ -36,7 +36,7 @@
 		<!-- Modal -->
 		<router-view></router-view>
 
-	</section>
+	</div>
 </template>
 
 <script>

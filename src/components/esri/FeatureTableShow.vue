@@ -1,5 +1,5 @@
 <template>
-	<div class="modal fade" tabindex="-1" role="dialog" data-backdrop="false">
+	<div class="modal fade" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="featureTableShowModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 
@@ -10,7 +10,7 @@
 					<h4 v-if="is_loading" class="modal-title">
 						Loading...
 					</h4>
-					<h4 v-else class="modal-title">
+					<h4 v-else class="modal-title" id="featureTableShowModalLabel">
 						{{ modal_header_text }}
 					</h4>
 				</header>

@@ -1,9 +1,9 @@
 <template>
 	<main id="app">
 
-		<ul class="nav nav-tabs">
-			<router-link v-if="tabs.length > 1" v-for="tab in tabs" :to="tab.path" :key="tab.text" tag="li">
-				<a>{{ tab.text }}</a>
+		<ul class="nav nav-tabs" role="tablist">
+			<router-link v-if="tabs.length > 1" v-for="tab in tabs" :to="tab.path" :key="tab.text" tag="li" role="presentation">
+				<a role="tab" data-toggle="tab">{{ tab.text }}</a>
 			</router-link>
 		</ul>
 
